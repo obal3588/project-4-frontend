@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.scss'
 import { Route } from 'react-router-dom'
-
+import Obaid from './auth/components/Obaid';
 import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
 import Header from './header/Header'
 import SignUp from './auth/components/SignUp'
@@ -20,7 +20,7 @@ class App extends Component {
     }
   }
 
-  setUser = user => this.setState({ user })
+  setUser = user => this.setState({user})
 
   clearUser = () => this.setState({ user: null })
 
@@ -32,7 +32,10 @@ class App extends Component {
     const { alerts, user } = this.state
 
     return (
+
       <React.Fragment>
+
+  
         <Header user={user} />
         {alerts.map((alert, index) => (
           <AlertDismissible key={index} variant={alert.type} message={alert.message} />
@@ -41,6 +44,8 @@ class App extends Component {
           <Route path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
           )} />
+          <Route path="/Obaid" component={Obaid} />
+       
           <Route path='/sign-in' render={() => (
             <SignIn alert={this.alert} setUser={this.setUser} />
           )} />

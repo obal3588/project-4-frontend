@@ -22,9 +22,9 @@ class SignIn extends Component {
     event.preventDefault()
 
     const { alert, history, setUser } = this.props
-
+    console.log("hisham",this.state);
     signIn(this.state)
-      .then(res => setUser(res.data.user))
+      .then(res => setUser(res.data.user.name))
       .then(() => alert(messages.signInSuccess, 'success'))
       .then(() => history.push('/'))
       .catch(error => {
