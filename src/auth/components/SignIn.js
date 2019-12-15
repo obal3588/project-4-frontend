@@ -4,10 +4,7 @@ import { withRouter } from 'react-router-dom'
 import { signIn } from '../api'
 import messages from '../messages'
 
-<<<<<<< HEAD
-=======
 import {ispatient ,patient,assistant} from "../helpMethods.js"
->>>>>>> 17cbdbbf89ccdd09f3c2bc4c437b9f2bbb3a9b40
 
 class SignIn extends Component {
   constructor () {

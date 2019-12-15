@@ -47,11 +47,7 @@ class App extends Component {
           <Route path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
           )} />
-<<<<<<< HEAD
-          <Route path="/About" component={About} />
-=======
           <Route path="/newreq" component={NewRequest} />
->>>>>>> 17cbdbbf89ccdd09f3c2bc4c437b9f2bbb3a9b40
        
           <Route path='/sign-in' render={() => (
             <SignIn alert={this.alert} setUser={this.setUser} />
