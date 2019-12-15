@@ -9,18 +9,21 @@ import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 import AlertDismissible from './auth/components/AlertDismissible'
-
+import PatientDash from "./dashboard/Patient/PatientDash"
+import NewRequest from "./dashboard/Patient/NewRequest"
+import AssistantDash from "./dashboard/Assistant/AssistantDash"
 class App extends Component {
   constructor () {
     super()
 
     this.state = {
       user: null,
+      userObj:{},
       alerts: []
     }
   }
 
-  setUser = user => this.setState({user})
+  setUser = (user,userObj) => this.setState({user,userObj})
 
   clearUser = () => this.setState({ user: null })
 
@@ -44,7 +47,11 @@ class App extends Component {
           <Route path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
           )} />
+<<<<<<< HEAD
           <Route path="/About" component={About} />
+=======
+          <Route path="/newreq" component={NewRequest} />
+>>>>>>> 17cbdbbf89ccdd09f3c2bc4c437b9f2bbb3a9b40
        
           <Route path='/sign-in' render={() => (
             <SignIn alert={this.alert} setUser={this.setUser} />
@@ -54,6 +61,13 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword alert={this.alert} user={user} />
+          )} />
+
+<AuthenticatedRoute user={user} path='/patient' render={() => (
+          <PatientDash/>
+          )} />
+          <AuthenticatedRoute user={user} path='/assistant' render={() => (
+          <AssistantDash/>
           )} />
         </main>
       </React.Fragment>
