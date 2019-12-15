@@ -4,6 +4,8 @@ import { withRouter } from 'react-router-dom'
 import { signIn } from '../api'
 import messages from '../messages'
 
+import {ispatient ,patient,assistant} from "../helpMethods.js"
+
 class SignIn extends Component {
   constructor () {
     super()
@@ -22,11 +24,27 @@ class SignIn extends Component {
     event.preventDefault()
 
     const { alert, history, setUser } = this.props
-    console.log("hisham",this.state);
+
+    let url="";
+   
     signIn(this.state)
-      .then(res => setUser(res.data.user.name))
+     .then(res =>{
+       const temp=res.data.user.role.localeCompare("Assistant");
+       if (temp === 0){
+        console.log("ass")
+        url ="/assistant";
+        return setUser(res.data.user.name,assistant(res))
+       }
+        else
+        {
+        console.log ("p")
+        url ="/patient";
+       return  setUser(res.data.user.name,patient(res))
+        }
+        
+      } )
       .then(() => alert(messages.signInSuccess, 'success'))
-      .then(() => history.push('/'))
+      .then((res) => history.push(url))
       .catch(error => {
         console.error(error)
         this.setState({ email: '', password: '' })
@@ -36,6 +54,7 @@ class SignIn extends Component {
 
   render () {
     const { email, password } = this.state
+   
 
     return (
       <form className='auth-form' onSubmit={this.onSignIn}>
