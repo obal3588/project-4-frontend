@@ -43,10 +43,22 @@ const Header = ({ user }) => (
       <Nav.Link>{ user ? authenticatedOptions : unauthenticatedOptions }</Nav.Link>
     
     </Nav>
-    <Form inline>
+    <Navbar bg="dark" variant="dark">
+    <Navbar.Brand href="/">
+      <img
+        alt=""
+        src="https://previews.123rf.com/images/alluranet/alluranet1712/alluranet171202730/91795598-disability-care-logo-design-template-vector.jpg"
+        width="50"
+        height="50"
+        className="d-inline-block align-top"
+      />
+    </Navbar.Brand>
+  </Navbar>
+    
+    {/* <Form inline>
       <FormControl type="text" placeholder="Search" className="mr-sm-2" />
       <Button variant="outline-info">Search</Button>
-    </Form>
+    </Form> */}
   </Navbar>
   
   </React.Fragment>

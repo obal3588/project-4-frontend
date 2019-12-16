@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import './App.scss'
 import { Route } from 'react-router-dom'
-import About from './auth/components/About';
+import Home from './Home/Home';
+import Footer from './Home/Footer';
 import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
 import Header from './header/Header'
 import SignUp from './auth/components/SignUp'
@@ -12,6 +13,7 @@ import AlertDismissible from './auth/components/AlertDismissible'
 import PatientDash from "./dashboard/Patient/PatientDash"
 import NewRequest from "./dashboard/Patient/NewRequest"
 import AssistantDash from "./dashboard/Assistant/AssistantDash"
+import Team from "./Home/Team"
 class App extends Component {
   constructor () {
     super()
@@ -47,8 +49,8 @@ class App extends Component {
           <Route path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
           )} />
-          <Route path="/newreq" component={NewRequest} />
-       
+          <Route path="/team" component={Team} />
+          <Route exact path="/" component={Home} />
           <Route path='/sign-in' render={() => (
             <SignIn alert={this.alert} setUser={this.setUser} />
           )} />
@@ -66,6 +68,7 @@ class App extends Component {
           <AssistantDash/>
           )} />
         </main>
+        <Footer/>
       </React.Fragment>
     )
   }
