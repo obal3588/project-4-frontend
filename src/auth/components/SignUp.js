@@ -3,6 +3,8 @@ import { withRouter } from "react-router-dom";
 import { Form } from "react-bootstrap";
 import { signUp, signIn } from "../api";
 import messages from "../messages";
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
+
 
 class SignUp extends Component {
   constructor() {
@@ -54,11 +56,24 @@ class SignUp extends Component {
     } = this.state;
 
     return (
+
+      <MDBContainer>
+      <MDBRow>
+        <MDBCol md="6">
+          <MDBCard  className='card-image'
+            style={{
+              backgroundImage:
+                'url(https://mdbootstrap.com/img/Photos/Others/pricing-table7.jpg)',
+              width: '28rem'
+            }}>
+            <MDBCardBody>
+
       <form className="auth-form" onSubmit={this.onSignUp}>
         <h3>Sign Up</h3>
         <label htmlFor="name">Name</label>
-        <input
+        <MDBInput
           required
+          icon="user"
           name="name"
           value={name}
           type="text"
@@ -67,7 +82,7 @@ class SignUp extends Component {
         />
 
         <label htmlFor="age">Age</label>
-        <input
+        <MDBInput
           required
           name="age"
           value={age}
@@ -77,7 +92,7 @@ class SignUp extends Component {
         />
 
         <label htmlFor="Phone Number">Phone Number</label>
-        <input
+        <MDBInput
           required
           name="phone"
           value={phone}
@@ -89,8 +104,9 @@ class SignUp extends Component {
         />
 
         <label htmlFor="email">Email</label>
-        <input
+        <MDBInput
           required
+          icon="envelope"
           name="email"
           value={email}
           type="email"
@@ -98,8 +114,9 @@ class SignUp extends Component {
           onChange={this.handleChange}
         />
         <label htmlFor="password">Password</label>
-        <input
+        <MDBInput
           required
+          icon="lock"
           name="password"
           value={password}
           type="password"
@@ -107,8 +124,9 @@ class SignUp extends Component {
           onChange={this.handleChange}
         />
         <label htmlFor="passwordConfirmation">Confirm Password</label>
-        <input
+        <MDBInput
           required
+          icon="exclamation-triangle"
           name="passwordConfirmation"
           value={passwordConfirmation}
           type="password"
@@ -129,8 +147,17 @@ class SignUp extends Component {
           <option>Assistant</option>
         </Form.Control>
 
-        <button type="submit">Sign Up</button>
+        <div className="text-center py-4 mt-3">
+                  <MDBBtn color="cyan" type="submit">
+                    Register
+                  </MDBBtn>
+                </div>
       </form>
+      </MDBCardBody>
+          </MDBCard>
+        </MDBCol>
+      </MDBRow>
+    </MDBContainer>
     );
   }
 }
