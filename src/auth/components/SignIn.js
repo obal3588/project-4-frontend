@@ -38,7 +38,8 @@ class SignIn extends Component {
         else
         {
         console.log ("p")
-        url ="/patient";
+        url =`/patient/:${res.data.user.token}`;
+   
        return  setUser(res.data.user.name,patient(res))
         }
         
