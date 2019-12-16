@@ -25,16 +25,10 @@ const alwaysOptions = (
   </React.Fragment>
 )
 
-const about = (
-  <React.Fragment>
-    <Link to="/About">About</Link>
-  </React.Fragment>
-)
-
 const Header = ({ user }) => (
   <header className="main-header">
      <React.Fragment>
-  <Navbar bg="dark" variant="dark">
+  <Navbar bg="light" variant="light">
     <Navbar.Brand href="#home"></Navbar.Brand>
     <Nav className="mr-auto">
 
@@ -43,17 +37,17 @@ const Header = ({ user }) => (
       <Nav.Link>{ user ? authenticatedOptions : unauthenticatedOptions }</Nav.Link>
     
     </Nav>
-    <Navbar bg="dark" variant="dark">
-    <Navbar.Brand href="/">
+    
+    <Nav>
+      <a href="/">
       <img
         alt=""
         src="https://previews.123rf.com/images/alluranet/alluranet1712/alluranet171202730/91795598-disability-care-logo-design-template-vector.jpg"
-        width="50"
-        height="50"
-        className="d-inline-block align-top"
+        width="65"
+        height="50" 
       />
-    </Navbar.Brand>
-  </Navbar>
+      </a>
+  </Nav>
     
     {/* <Form inline>
       <FormControl type="text" placeholder="Search" className="mr-sm-2" />
