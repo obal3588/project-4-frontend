@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import { allAvailableAssistant } from "../../auth/api";
-import Assistant from "./Assistant"
-import { Route, Redirect } from 'react-router';
+import { MDBMedia, MDBIcon ,MDBBtn } from 'mdbreact';
+import {allAvailableAssistant} from "../../auth/api"
+import {Assistant} from "./Assistant"
 export class PatientDash extends Component {
 
     constructor(){
@@ -42,14 +41,16 @@ export class PatientDash extends Component {
         //     pathname: `/${this.props.user.role}/${this.props.user.token }/newrequest`, 
         //     token: this.props.user.token 
         //   };
+        
         return (
-
-            <dev>
-
-                {Assistants}
-            </dev>
+          
+                <MDBMedia list className="mt-3">
+                 
+                  {Assistants}
+                </MDBMedia>
+           
         )
     }
 }
 
-export default PatientDash
+export default PatientDash;

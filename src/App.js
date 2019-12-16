@@ -1,17 +1,20 @@
-import React, { Component } from "react";
-import "./App.scss";
-import { Route } from "react-router-dom";
-import Obaid from "./auth/components/Obaid";
-import AuthenticatedRoute from "./auth/components/AuthenticatedRoute";
-import Header from "./header/Header";
-import SignUp from "./auth/components/SignUp";
-import SignIn from "./auth/components/SignIn";
-import SignOut from "./auth/components/SignOut";
-import ChangePassword from "./auth/components/ChangePassword";
-import AlertDismissible from "./auth/components/AlertDismissible";
-import PatientDash from "./dashboard/Patient/PatientDash";
-import NewRequest from "./dashboard/Patient/NewRequest";
-import AssistantDash from "./dashboard/Assistant/AssistantDash";
+import React, { Component } from 'react'
+import './App.scss'
+import { Route } from 'react-router-dom'
+import Home from './Home/Home';
+import Footer from './Home/Footer';
+import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
+import Header from './header/Header'
+import SignUp from './auth/components/SignUp'
+import SignIn from './auth/components/SignIn'
+import SignOut from './auth/components/SignOut'
+import ChangePassword from './auth/components/ChangePassword'
+import AlertDismissible from './auth/components/AlertDismissible'
+import PatientDash from "./dashboard/Patient/PatientDash"
+import MyRequests from "./dashboard/Patient/myrequests/MyRequests"
+import NewRequest from "./dashboard/Patient/NewRequest"
+import AssistantDash from "./dashboard/Assistant/AssistantDash"
+import Team from "./Home/Team"
 class App extends Component {
   constructor() {
     super();
@@ -77,6 +80,16 @@ class App extends Component {
             exact path={`/Patient/:${userObj.token}`}
             render={() => <PatientDash user={userObj} setAssistantId={this.setAssistantId}/>}
           />
+           <AuthenticatedRoute
+            user={user}
+            exact path={`/Patient/:${userObj.token}/myrequests`}
+            render={() => <MyRequests user={userObj} />}
+          />
+          <Route path="/team" component={Team} />
+          <Route exact path="/" component={Home} />
+       
+     
+    
 
           <AuthenticatedRoute
             user={user}
@@ -85,10 +98,11 @@ class App extends Component {
           />
           <AuthenticatedRoute
             user={user}
-            path="/assistant"
+            exact path="/assistant"
             render={() => <AssistantDash user={userObj} />}
           />
         </main>
+        <Footer/>
       </React.Fragment>
     );
   }

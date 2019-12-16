@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn  } from "mdbreact";
 
 import { signIn } from '../api'
 import messages from '../messages'
@@ -58,11 +59,21 @@ class SignIn extends Component {
    
 
     return (
+
+      <MDBContainer>
+      <MDBRow>
+        <MDBCol md="6">
+      
       <form className='auth-form' onSubmit={this.onSignIn}>
         <h3>Sign In</h3>
+
+
+
+
         <label htmlFor="email">Email</label>
-        <input
+        <MDBInput
           required
+          icon="envelope"
           type="email"
           name="email"
           value={email}
@@ -70,16 +81,22 @@ class SignIn extends Component {
           onChange={this.handleChange}
         />
         <label htmlFor="password">Password</label>
-        <input
+        <MDBInput
           required
+           icon="lock"
           name="password"
           value={password}
           type="password"
           placeholder="Password"
           onChange={this.handleChange}
         />
-        <button type="submit">Sign In</button>
+         <div className="text-center">
+         <MDBBtn type="submit">Sign In</MDBBtn>
+         </div>
       </form>
+      </MDBCol>
+      </MDBRow>
+    </MDBContainer>
     )
   }
 }

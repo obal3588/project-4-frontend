@@ -4,7 +4,7 @@ import axios from 'axios'
 
 
 export const newRequest = req => {
-  console.log(req)
+
   return axios({
     url: apiUrl + '/api/requests',
     method: 'POST',
@@ -40,6 +40,19 @@ console.log(req,"req")
 )
 }
 
+
+export const myrequests = req => {
+  console.log(req,"req")
+    return axios({
+      url: apiUrl + "/api/requests/patientrequests",
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${req.token}` // FOR EXPRESS
+        // 'Authorization': `Token ${user.token}` // FOR RAILS
+      },
+    }
+  )
+  }
 
 
 

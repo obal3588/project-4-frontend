@@ -3,6 +3,7 @@ import{Form ,Col ,Button} from 'react-bootstrap';
 import DateTimePicker from 'react-datetime-picker';
 import { newRequest } from "../../auth/api";
 import { withRouter } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 export class NewRequest extends Component {
   constructor() {
     super();
@@ -34,10 +35,20 @@ export class NewRequest extends Component {
 
 
   newReq= event => {
- 
+
+    const self = this
+    
     event.preventDefault();
-    newRequest(this.state)
+    newRequest(this.state).then((res) => {
+      
+      return self.props.history.goBack()
+
+    }
+    
    
+    )
+  .catch(e=>console.log(e))
+  
   };
   onChange = date => this.setState({ date })
 
@@ -91,4 +102,6 @@ export class NewRequest extends Component {
     }
 }
 
-export default NewRequest
+
+
+export default withRouter(NewRequest)
