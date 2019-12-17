@@ -1,0 +1,31 @@
+.card-image{
+    background-image :  url("https://static.vecteezy.com/system/resources/previews/000/598/665/non_2x/light-blue-cool-vector-low-poly-crystal-background-polygon-design-pattern-low-poly-illustration-background.jpg");
+    opacity: 0.8;
+
+    background-size: cover;
+    
+  
+
+}
+
+label{
+    color: rgb(219, 89, 41);
+    font-weight: bolder;
+}
+
+body{
+
+    background:transparent url("https://integritydisability.com.au/wp-content/uploads/2018/02/First_Slide_Old_Disabality.jpg?x98051") no-repeat fixed center;
+    background-size: contain;
+  
+    // opacity: 0.5;
+}
+
+#main{
+   margin:0 auto;
+   margin-right: 0.5px;
+   margin-bottom:20px;
+   margin-top:20px;
+    align-content: center;
+    align-items: center;
+}

@@ -27,11 +27,13 @@ class Team extends Component {
               <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-fb">
                 <MDBIcon fab icon="facebook-f" />
               </MDBBtn>
-              <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-git">
+              <MDBBtn tag="a" href="https://github.com/obal3588"
+              floating size="sm" className="mx-1 mb-0 btn-git">
                 <MDBIcon fab icon="github" />
               </MDBBtn>
 
-              <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-li">
+              <MDBBtn tag="a" href="https://www.linkedin.com/in/obaid-fpga/"
+              floating size="sm" className="mx-1 mb-0 btn-li">
                 <MDBIcon fab icon="linkedin-in" />
               </MDBBtn>
              
@@ -46,11 +48,13 @@ class Team extends Component {
               <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-fb">
                 <MDBIcon fab icon="facebook-f" />
               </MDBBtn>
-              <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-git">
+              <MDBBtn tag="a" href="https://github.com/hamjahb"
+              floating size="sm" className="mx-1 mb-0 btn-git">
                 <MDBIcon fab icon="github" />
               </MDBBtn>
 
-              <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-li">
+              <MDBBtn tag="a" href="https://www.linkedin.com/in/haljahbli-softwareeng/"
+              floating size="sm" className="mx-1 mb-0 btn-li">
                 <MDBIcon fab icon="linkedin-in" />
               </MDBBtn>
              
@@ -66,12 +70,15 @@ class Team extends Component {
               <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-fb">
                 <MDBIcon fab icon="facebook-f" />
               </MDBBtn>
-              <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-git">
+              <MDBBtn tag="a" href="https://github.com/saera1988"
+              floating size="sm" className="mx-1 mb-0 btn-git">
                 <MDBIcon fab icon="github" />
               </MDBBtn>
 
-              <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-li">
+              <MDBBtn tag="a" href="https://www.linkedin.com/in/sarah-alghofaili-87a268143/"
+floating size="sm" className="mx-1 mb-0 btn-li">
                 <MDBIcon fab icon="linkedin-in" />
+
               </MDBBtn>
              
             </MDBCol>

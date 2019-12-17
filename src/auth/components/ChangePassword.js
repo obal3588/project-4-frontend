@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-
+import './SignUp.scss';
 import { changePassword } from '../api'
 import messages from '../messages'
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 
 class ChangePassword extends Component {
   constructor () {
@@ -37,11 +38,20 @@ class ChangePassword extends Component {
     const { oldPassword, newPassword } = this.state
 
     return (
+
+      <MDBContainer id={'main'}>
+      <MDBRow>
+        <MDBCol md="6">
+          <MDBCard  className='card-image'>
+          
+            <MDBCardBody>
+
       <form className='auth-form' onSubmit={this.onChangePassword}>
-        <h3>Change Password</h3>
+      <h3 className='white-text text-center mb-5 mt-4 font-weight-bold'>
+                  <strong>Sign Up</strong></h3>
 
         <label htmlFor="oldpw">Old Password</label>
-        <input
+        <MDBInput
           required
           name="oldPassword"
           value={oldPassword}
@@ -50,7 +60,7 @@ class ChangePassword extends Component {
           onChange={this.handleChange}
         />
         <label htmlFor="newPassword">New Password</label>
-        <input
+        <MDBInput
           required
           name="newPassword"
           value={newPassword}
@@ -60,6 +70,11 @@ class ChangePassword extends Component {
         />
         <button type="submit">Change Password</button>
       </form>
+      </MDBCardBody>
+          </MDBCard>
+        </MDBCol>
+      </MDBRow>
+    </MDBContainer>
     )
   }
 }

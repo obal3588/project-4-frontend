@@ -9,8 +9,8 @@ class Home extends Component {
 
         {/* Company container  */}
       <div class="jumbotron text-center">
-      <h1>Meddico Trip</h1>
-      <h4>Solutions for better care, enhanced safety and independent living</h4> 
+     
+      <h2>Solutions For Better Care, Enhanced Safety And Independent Living</h2> 
        
     </div>
 
@@ -19,16 +19,16 @@ class Home extends Component {
       <div class="container-fluid">
       <div class="row">
         <div class="col-sm-8">
-          <h2>About Meddico Trip</h2>
+
+          
+          <h2>About Meddico Trip..</h2>
 
           <p>We provide professional, non-emergency transportation for elderly and disabled individuals,
             <br/> who want to travel to their destination safely and in a timely manner. 
             <br/>If you or your loved ones need compassionate and prompt drivers of wheelchair accessible taxis, you can book your next trip with us.</p>
-          <button class="btn btn-default btn-lg">Get in Touch</button>
+         
         </div>
-        <div class="col-sm-4">
-          <span class="glyphicon glyphicon-signal logo"></span>
-        </div>
+      
       </div>
     </div>
 
@@ -37,6 +37,7 @@ class Home extends Component {
 <div class="container-fluid text-center bg-grey">
     <h2>Our Services</h2>
     <h4>We can accommodate most needs, including:</h4>
+    <br/>
     <div class="row text-center">
               <div class="col-sm-4">
                         <div class="thumbnail">
@@ -68,6 +69,7 @@ class Home extends Component {
    <div class="text-center">
      <h2>Packages</h2>
      <h4>Choose a payment plan that works for you</h4>
+   <br/>
    </div>
    <div class="row">
      <div class="col-sm-4">

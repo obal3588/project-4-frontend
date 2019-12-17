@@ -7,8 +7,8 @@ import { Navbar,Nav ,Form,FormControl,Button} from "react-bootstrap";
 
 const authenticatedOptions = (
   <React.Fragment>
-    <Link to="/change-password">Change Password</Link>
-    <Link to="/sign-out">Sign Out</Link>
+    <Link className="nav-link d-inline" to="/change-password">Change Password</Link>
+    <Link className="nav-link d-inline" to="/sign-out">Sign Out</Link>
   </React.Fragment>
 )
 
@@ -25,17 +25,20 @@ const alwaysOptions = (
   </React.Fragment>
 )
 
+
+
 const Header = ({ user }) => (
-  <header className="main-header">
+  <header className="main-header ">
      <React.Fragment>
-  <Navbar bg="light" variant="light">
+  <Navbar  variant="light">
     <Navbar.Brand href="#home"></Navbar.Brand>
     <Nav className="mr-auto">
 
-    <Nav.Link>Meddico Trip { user && <span>Welcome, {user}</span>}</Nav.Link>
+    <Nav.Link className="meddico"> Meddico Trip</Nav.Link>
+    <Nav.Link>  { user && <span>Welcome, {user}</span>}</Nav.Link>
       <Nav.Link>{alwaysOptions}</Nav.Link>
       <Nav.Link>{ user ? authenticatedOptions : unauthenticatedOptions }</Nav.Link>
-    
+      <Nav.Link >Team </Nav.Link>
     </Nav>
     
     <Nav>
