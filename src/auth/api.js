@@ -1,6 +1,73 @@
 import apiUrl from '../apiConfig'
 import axios from 'axios'
 
+
+
+export const newRequest = req => {
+
+  return axios({
+    url: apiUrl + '/api/requests',
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${req.token}` // FOR EXPRESS
+      // 'Authorization': `Token ${user.token}` // FOR RAILS
+    },
+    data: {
+      request: {
+        assistantId: req.assistantId,
+        date:req.date,
+        carDescription:req.carDescription,
+        specialNeeds:req.specialNeeds,
+        package:req.package,
+        trip: {
+          start:req.pickup,
+          destination: req.dropoff
+        },
+     
+      }
+  }})
+}
+
+export const allAvailableAssistant = req => {
+console.log(req,"req")
+  return axios({
+    url: apiUrl + "/api/requests/availabledrivers",
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${req.token}` // FOR EXPRESS
+      // 'Authorization': `Token ${user.token}` // FOR RAILS
+    },}
+)
+}
+
+
+export const myrequests = req => {
+  console.log(req,"req")
+    return axios({
+      url: apiUrl + "/api/requests/patientrequests",
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${req.token}` // FOR EXPRESS
+        // 'Authorization': `Token ${user.token}` // FOR RAILS
+      },
+    }
+  )
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export const signUp = credentials => {
   return axios({
     method: 'POST',
@@ -14,7 +81,6 @@ export const signUp = credentials => {
         role: credentials.type ,
         age :credentials.age,
         name:credentials.name
-    
 
 
       }
