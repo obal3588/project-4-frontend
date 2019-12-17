@@ -54,7 +54,7 @@ export class NewRequest extends Component {
 
   
     render() {
-      console.log(this.props,"check")
+  
         return (
             <Form onSubmit={this.newReq}>
             <Form.Row>
