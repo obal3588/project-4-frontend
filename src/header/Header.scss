@@ -1,13 +1,19 @@
 // $charcoal: #bbb;
 
-// .main-header{
+.main-header{
 
-//   color:orange;
-// }
+  background: darkcyan;
+  
+}
 
-// .nav-link{
-//   color:orange;
-// }
+.meddico{
+  color:orange;
+}
+
+.nav-link{
+  color:white   !important;
+  font-weight: bolder;
+}
 
 
 
@@ -27,10 +33,12 @@
 // }
 
 // .main-header > nav {
+
 //   align-items: center;
 //   display: flex;
 //   flex-grow: 1;
 //   justify-content: flex-end;
+//   color:orange;
 // }
 
 // @media (max-width: 600px) {

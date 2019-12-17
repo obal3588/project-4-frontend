@@ -1,10 +1,13 @@
 
 .jumbotron {
   margin-top: 2em;
-  background-color: rgb(11, 165, 165); 
-  color: white ;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  background-color: white; 
+  color:rgba(253, 83, 4, 0.885);
+  text-shadow: -1px 0 rgb(253, 103, 4), 0 1px rgb(253, 103, 4), 1px 0 rgb(253, 103, 4), 0 -1px rgb(253, 103, 4);
+ 
   padding: 100px 25px;
+  // background: url("https://2o3dku1y6qqx2cmhkyvli8ok-wpengine.netdna-ssl.com/wp-content/uploads/sites/5/2018/11/wheelchair_GettyImages-912100676_2000x1125_2-860x484.jpg") no-repeat ;
+  opacity: 0.7;
 }
 
 .container-fluid {
@@ -84,6 +87,16 @@ background-color: #f4511e;
 color: #fff;
 }
 
+h2{
+  color: #f4511e;
+  font-weight: bolder;
+  
+}
 
+.panel {
+  background-color: white;
+}
 
-
+p{
+  font-weight: bolder;
+}
