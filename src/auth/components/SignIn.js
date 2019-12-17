@@ -94,7 +94,7 @@ class SignIn extends Component {
           onChange={this.handleChange}
         />
          <div className="text-center">
-         <MDBBtn type="submit">Sign In</MDBBtn>
+         <MDBBtn  color="deep-orange" type="submit">Sign In</MDBBtn>
          
         
             

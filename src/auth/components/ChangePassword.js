@@ -68,7 +68,9 @@ class ChangePassword extends Component {
           placeholder="New Password"
           onChange={this.handleChange}
         />
-        <button type="submit">Change Password</button>
+         <MDBBtn color="deep-orange" type="submit">
+                    Change Password
+                  </MDBBtn>
       </form>
       </MDBCardBody>
           </MDBCard>

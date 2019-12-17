@@ -6,6 +6,7 @@ export class AssistantDash extends Component {
     render() {
         return (
             <MDBCol>
+              <br/>
             <MDBCard style={{ width: "22rem" }}>
               <MDBCardImage className="img-fluid" src="https://cdn3.iconfinder.com/data/icons/point-of-interest-1/96/taxi-512.png" waves />
               <MDBCardBody>
@@ -17,7 +18,9 @@ export class AssistantDash extends Component {
                 <MDBBtn href="#">Decline</MDBBtn>
               </MDBCardBody>
             </MDBCard>
+            <br/>
           </MDBCol>
+          
         )
     }
 }
