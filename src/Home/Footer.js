@@ -35,14 +35,7 @@ class Footer extends Component {
             <a class="li-ic">
               <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
             </a>
-            {/* <!--Instagram--> */}
-            <a class="ins-ic">
-              <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-            </a>
-            {/* <!--Pinterest--> */}
-            <a class="pin-ic">
-              <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
-            </a>
+           
           </div>
         </div>
         {/* <!-- Grid column --> */}

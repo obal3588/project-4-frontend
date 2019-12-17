@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-
+import './SignUp.scss';
 import { changePassword } from '../api'
 import messages from '../messages'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
@@ -39,19 +39,16 @@ class ChangePassword extends Component {
 
     return (
 
-      <MDBContainer>
+      <MDBContainer id={'main'}>
       <MDBRow>
         <MDBCol md="6">
-          <MDBCard  className='card-image'
-            style={{
-              backgroundImage:
-                'url(https://static1.squarespace.com/static/5902bccdebbd1a7690b36562/596fdb18d1758e29a5407271/5a27093f652dea92b0bbdca7/1512507760986/GettyImages-466456685-600x400.jpg?format=1500w)',
-              width: '28rem'
-            }}>
+          <MDBCard  className='card-image'>
+          
             <MDBCardBody>
 
       <form className='auth-form' onSubmit={this.onChangePassword}>
-        <h3>Change Password</h3>
+      <h3 className='white-text text-center mb-5 mt-4 font-weight-bold'>
+                  <strong>Sign Up</strong></h3>
 
         <label htmlFor="oldpw">Old Password</label>
         <MDBInput

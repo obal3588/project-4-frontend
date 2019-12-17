@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
-
+import './SignUp.scss';
 import { signIn } from '../api'
 import messages from '../messages'
 
@@ -59,21 +59,21 @@ class SignIn extends Component {
 
     return (
 
-      <MDBContainer>
+      <MDBContainer id={'main'}>
+        <br/>
       <MDBRow>
         <MDBCol md="6">
-          <MDBCard  className='card-image'
-            style={{
-              backgroundImage:
-                'url(https://www.manchesterspecialty.com/wp-content/uploads/2019/07/Protecting-Non-Emergency-Medical-Transportation-Drivers-While-On-the-Job-e1558732784308.jpg)',
-              width: '28rem'
-            }}>
+          <MDBCard  className='card-image'>
+           
+
+              
             <MDBCardBody>
       
       <form className='auth-form' onSubmit={this.onSignIn}>
-        <h3>Sign In</h3>
+      <h3 className='white-text text-center mb-5 mt-4 font-weight-bold'>
+                  <strong>Sign In</strong></h3>
 
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email" >Email</label>
         <MDBInput
           required
           icon="envelope"
@@ -95,13 +95,21 @@ class SignIn extends Component {
         />
          <div className="text-center">
          <MDBBtn type="submit">Sign In</MDBBtn>
+         
+        
+            
+         
          </div>
       </form>
+      <br/>
+    
+      
       </MDBCardBody>
           </MDBCard>
         </MDBCol>
       </MDBRow>
     </MDBContainer>
+    
     )
   }
 }
