@@ -97,7 +97,7 @@ class App extends Component {
             }
           />
           <Route path="/team" component={Team} />
-          <Route path="/SideNav" component={SideNav} />
+          {/* <Route path="/SideNav" component={SideNav} /> */}
           {/* <Route path="/NavbarPage" component={NavbarPage} /> */}
           <Route exact path="/" component={Home} />
          
