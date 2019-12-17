@@ -57,6 +57,17 @@ export const myrequests = req => {
 
 
 
+  export const deleteRequest  = req => {
+    console.log(req,"hisham")
+    return axios({
+      url: apiUrl + `/api/requests/${req._id}`,
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${req.token}` 
+      
+      }
+    })
+  }
 
 
 
