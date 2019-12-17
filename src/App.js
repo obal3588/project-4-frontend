@@ -15,6 +15,9 @@ import MyRequests from "./dashboard/Patient/myrequests/MyRequests"
 import NewRequest from "./dashboard/Patient/NewRequest"
 import AssistantDash from "./dashboard/Assistant/AssistantDash"
 import Team from "./Home/Team"
+import UpdateRequest from "./dashboard/Patient/myrequests/UpdateRequest"
+
+
 class App extends Component {
   constructor() {
     super();
@@ -26,6 +29,8 @@ class App extends Component {
       alerts: []
     };
   }
+
+
 
   setUser = (user, userObj) => this.setState({ user, userObj });
   setAssistantId = assistantId => this.setState({ assistantId });
@@ -39,6 +44,7 @@ class App extends Component {
     const { alerts, user, userObj } = this.state;
 
     return (
+    
       <React.Fragment>
         <Header user={user} />
         {alerts.map((alert, index) => (
@@ -49,6 +55,7 @@ class App extends Component {
           />
         ))}
         <main className="container">
+       
           <Route
             path="/sign-up"
             render={() => <SignUp alert={this.alert} setUser={this.setUser} />}
@@ -83,13 +90,27 @@ class App extends Component {
            <AuthenticatedRoute
             user={user}
             exact path={`/Patient/:${userObj.token}/myrequests`}
-            render={() => <MyRequests user={userObj} />}
+            render={() => 
+      
+            <MyRequests user={userObj} />
+         
+            }
           />
           <Route path="/team" component={Team} />
           <Route exact path="/" component={Home} />
-       
-     
-    
+         
+     <AuthenticatedRoute
+            user={user}
+            exact path={`/Patient/:${userObj.token}/myrequests/update/:id`}
+            render={() => 
+            
+                 <UpdateRequest user={userObj} />
+         
+           
+          
+          }
+          />
+          
 
           <AuthenticatedRoute
             user={user}
@@ -101,9 +122,11 @@ class App extends Component {
             exact path="/assistant"
             render={() => <AssistantDash user={userObj} />}
           />
+           
         </main>
         <Footer/>
       </React.Fragment>
+   
     );
   }
 }
