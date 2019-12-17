@@ -84,12 +84,12 @@ class App extends Component {
 
           <AuthenticatedRoute
             user={user}
-            exact path={`/Patient/:${userObj.token}`}
+            exact path={`/Patient/:token`}
             render={() => <PatientDash user={userObj} setAssistantId={this.setAssistantId}/>}
           />
            <AuthenticatedRoute
             user={user}
-            exact path={`/Patient/:${userObj.token}/myrequests`}
+            exact path={`/Patient/:token/myrequests`}
             render={() => 
       
             <MyRequests user={userObj} />
@@ -101,20 +101,18 @@ class App extends Component {
          
      <AuthenticatedRoute
             user={user}
-            exact path={`/Patient/:${userObj.token}/myrequests/update/:id`}
+            exact path={`/Patient/:token/myrequests/update/:id`}
             render={() => 
             
                  <UpdateRequest user={userObj} />
-         
-           
-          
+                  
           }
           />
           
 
           <AuthenticatedRoute
             user={user}
-            exact path={`/Patient/:${userObj.token}/newrequest`}
+            exact path={`/Patient/:token/newrequest`}
             render={() => <NewRequest user={userObj} assistantId={this.state.assistantId}  />}
           />
           <AuthenticatedRoute
