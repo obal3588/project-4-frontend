@@ -42,8 +42,8 @@ As IT:
 
 ## wireframes and diagrams 
 
-![home](images/home.png)
-![about](images/about.png)
+![home](images/Home.png)
+![about](images/About.png)
 ![assistantPage](images/assistantPage.png)
 ![requestForm](images/requestForm.png)
 ![requestPage](images/requestPage.png)
