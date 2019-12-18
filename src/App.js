@@ -9,7 +9,7 @@ import SignUp from './auth/components/SignUp'
 import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
-import AlertDismissible from './auth/components/AlertDismissible'
+
 import PatientDash from "./dashboard/Patient/PatientDash"
 import MyRequests from "./dashboard/Patient/myrequests/MyRequests"
 import NewRequest from "./dashboard/Patient/NewRequest"
@@ -27,7 +27,7 @@ class App extends Component {
       user: null,
       assistantId: null,
       userObj: {},
-      alerts: []
+ 
     };
   }
 
@@ -37,41 +37,34 @@ class App extends Component {
   setAssistantId = assistantId => this.setState({ assistantId });
   clearUser = () => this.setState({ user: null });
 
-  alert = (message, type) => {
-    this.setState({ alerts: [...this.state.alerts, { message, type }] });
-  };
+
 
   render() {
-    const { alerts, user, userObj } = this.state;
+    const { user, userObj } = this.state;
+    
 
     return (
     
       <React.Fragment>
-        <Header user={user} />
-        {alerts.map((alert, index) => (
-          <AlertDismissible
-            key={index}
-            variant={alert.type}
-            message={alert.message}
-          />
-        ))}
-        <main className="container push-footer">
+        <Header user={user}  userRoll={userObj}/>
+       
+        <main className="container">
        
           <Route
             path="/sign-up"
-            render={() => <SignUp alert={this.alert} setUser={this.setUser} />}
+            render={() => <SignUp    setUser={this.setUser} />}
           />
 
           <Route
             path="/sign-in"
-            render={() => <SignIn alert={this.alert} setUser={this.setUser} />}
+            render={() => <SignIn    setUser={this.setUser} />}
           />
           <AuthenticatedRoute
             user={user}
             path="/sign-out"
             render={() => (
               <SignOut
-                alert={this.alert}
+                  
                 clearUser={this.clearUser}
                 user={user}
               />
@@ -80,7 +73,7 @@ class App extends Component {
           <AuthenticatedRoute
             user={user}
             path="/change-password"
-            render={() => <ChangePassword alert={this.alert} user={user} />}
+            render={() => <ChangePassword    user={user} />}
           />
 
           <Route

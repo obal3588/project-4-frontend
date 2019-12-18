@@ -24,7 +24,7 @@ class SignIn extends Component {
   onSignIn = event => {
     event.preventDefault()
 
-    const { alert, history, setUser } = this.props
+    const {  history, setUser } = this.props
 
     let url="";
    
@@ -45,12 +45,12 @@ class SignIn extends Component {
         }
         
       } )
-      .then(() => alert(messages.signInSuccess, 'success'))
+     
       .then((res) => history.push(url))
       .catch(error => {
         console.error(error)
         this.setState({ email: '', password: '' })
-        alert(messages.signInFailure, 'danger')
+
       })
   }
 
