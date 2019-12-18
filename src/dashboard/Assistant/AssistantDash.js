@@ -7,15 +7,15 @@ export class AssistantDash extends Component {
         return (
             <MDBCol>
               <br/>
-            <MDBCard style={{ width: "22rem" }}>
+            <MDBCard style={{ width: "12rem", margin: '0 1rem ' }}>
               <MDBCardImage className="img-fluid" src="https://cdn3.iconfinder.com/data/icons/point-of-interest-1/96/taxi-512.png" waves />
               <MDBCardBody>
-                <MDBCardTitle>Request from</MDBCardTitle>
+                <MDBCardTitle>Upcoming Request</MDBCardTitle>
                 <MDBCardText>
                  patient info 
                 </MDBCardText>
-                <MDBBtn href="#">Accept</MDBBtn>
-                <MDBBtn href="#">Decline</MDBBtn>
+                <MDBBtn color="deep-orange"  href="#">Accept</MDBBtn>
+                <MDBBtn color="deep-orange" href="#">Decline</MDBBtn>
               </MDBCardBody>
             </MDBCard>
             <br/>

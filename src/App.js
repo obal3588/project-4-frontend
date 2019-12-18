@@ -54,7 +54,7 @@ class App extends Component {
             message={alert.message}
           />
         ))}
-        <main className="container">
+        <main className="container push-footer">
        
           <Route
             path="/sign-up"
@@ -82,12 +82,12 @@ class App extends Component {
             render={() => <ChangePassword alert={this.alert} user={user} />}
           />
 
-          <AuthenticatedRoute
+          <Route
             user={user}
             exact path={`/Patient/:token`}
             render={() => <PatientDash user={userObj} setAssistantId={this.setAssistantId}/>}
           />
-           <AuthenticatedRoute
+           <Route
             user={user}
             exact path={`/Patient/:token/myrequests`}
             render={() => 

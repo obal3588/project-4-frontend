@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import {deleteRequest} from "../../../auth/api"
 import {Redirect} from "react-router-dom"
 import { ThemeContext }  from "../../../ThemeContext/ThemeContext"
+import{ Card ,Button,CardDeck,CardGroup}from 'react-bootstrap'
+import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact';
 
 export class Request extends Component {
 
@@ -61,7 +63,15 @@ export class Request extends Component {
     render() {
         console.log(this.context,"aaaa")
         return (
-            <div>
+
+    
+      <MDBCard className="my-5 mx-3">
+        <MDBCardImage className="img-fluid" src="https://www.tufitech.com/wp-content/uploads/2016/12/Gear-S3-find-my-car-app.jpg" waves />
+        <MDBCardBody>
+          <MDBCardTitle className="deep-orange-text text-center">My Ride</MDBCardTitle>
+          <MDBCardText>
+                   
+           
                   {this.renderRedirect()}
                 <lu>
                   <li>pickup:{this.props.request.pickup}</li>
@@ -71,10 +81,15 @@ export class Request extends Component {
                   <li>assistantId:{this.props.request.assistantId}</li>
                   
             </lu>
-            <button onClick={this.handlDelete}>Delete</button>
-            <button onClick={this.setRedirect}>edit</button>
+            <br/>
+        
+            <MDBBtn  color="deep-orange"  onClick={this.handlDelete}>Delete</MDBBtn>
+            <MDBBtn color="deep-orange" onClick={this.setRedirect}>edit</MDBBtn>
 
-            </div>
+           </MDBCardText>
+        </MDBCardBody>
+      </MDBCard>
+     
         )
     }
 }
