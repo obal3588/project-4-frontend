@@ -6,11 +6,11 @@ import { ThemeContext } from "../../ThemeContext/ThemeContext";
 export class AssistantDash extends Component {
   constructor() {
     super();
-
     this.state = {
       patientReq: []
     };
   }
+
   static contextType = ThemeContext;
   setPatient = patient=> this.setState({patient});
   apiCallReq = () => {
@@ -49,7 +49,7 @@ export class AssistantDash extends Component {
 
     this.apiCallReq();
   }
-
+  
   render() {
     const arr = this.state.patientReq.map(x => {
       return <Patient patient={x} user={this.props.user} setPatient={this.setPatient} apiCallReq={this.apiCallReq}/>;

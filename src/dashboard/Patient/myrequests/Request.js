@@ -1,7 +1,9 @@
-import React, { Component } from "react";
-import { deleteRequest } from "../../../auth/api";
-import { Redirect } from "react-router-dom";
-import { ThemeContext } from "../../../ThemeContext/ThemeContext";
+import React, { Component } from 'react'
+import {deleteRequest} from "../../../auth/api"
+import {Redirect} from "react-router-dom"
+import { ThemeContext }  from "../../../ThemeContext/ThemeContext"
+import{ Card ,Button,CardDeck,CardGroup}from 'react-bootstrap'
+import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact';
 
 export class Request extends Component {
   constructor() {
@@ -10,6 +12,7 @@ export class Request extends Component {
       redirect: false
     };
   }
+
   static contextType = ThemeContext;
   setRedirect = event => {
     event.preventDefault();
@@ -42,30 +45,40 @@ export class Request extends Component {
     deleteRequest(this.props.request);
     this.props.apicall();
   };
-  handlDelete = e => {
-    e.preventDefault();
+  
+    render() {
+        console.log(this.context,"aaaa")
+        return (
 
-    deleteRequest(this.props.request);
-    this.props.apicall();
-  };
+    
+      <MDBCard className="my-5 mx-3">
+        <MDBCardImage className="img-fluid" src="https://www.tufitech.com/wp-content/uploads/2016/12/Gear-S3-find-my-car-app.jpg" waves />
+        <MDBCardBody>
+          <MDBCardTitle className="deep-orange-text text-center">My Ride</MDBCardTitle>
+          <MDBCardText>
+                   
+           
+                  {this.renderRedirect()}
+                <lu>
+                  <li>pickup:{this.props.request.pickup}</li>
+                  <li>dropoff:{this.props.request.dropoff}</li>
+                  <li>data:{this.props.request.date}</li>
+                  <li>completed:{this.props.request.completed}</li>
+                  <li>assistantId:{this.props.request.assistantId}</li>
+                  
+            </lu>
+            <br/>
+        
+            <MDBBtn  color="deep-orange"  onClick={this.handlDelete}>Delete</MDBBtn>
+            <MDBBtn color="deep-orange" onClick={this.setRedirect}>edit</MDBBtn>
 
-  render() {
-    console.log(this.context, "aaaa");
-    return (
-      <div>
-        {this.renderRedirect()}
-        <lu>
-          <li>pickup:{this.props.request.pickup}</li>
-          <li>dropoff:{this.props.request.dropoff}</li>
-          <li>data:{this.props.request.date}</li>
-          <li>completed:{this.props.request.completed}</li>
-          <li>assistantId:{this.props.request.assistantId}</li>
-        </lu>
-        <button onClick={this.handlDelete}>Delete</button>
-        <button onClick={this.setRedirect}>edit</button>
-      </div>
-    );
-  }
+           </MDBCardText>
+        </MDBCardBody>
+      </MDBCard>
+     
+        )
+    }
+
 }
 
 export default Request;

@@ -67,12 +67,12 @@ export class Patient extends Component {
 
       return (
           <div>
-        <MDBBtn onClick={this.handleAccept}>Accept</MDBBtn>
-        <MDBBtn onClick={this.handleDecline}>Decline</MDBBtn></div> );
+        <MDBBtn color="deep-orange" onClick={this.handleAccept}>Accept</MDBBtn>
+        <MDBBtn color="deep-orange" onClick={this.handleDecline}>Decline</MDBBtn></div> );
       }
     else {
 
-        return(<MDBBtn onClick={this.handleDone} >Done</MDBBtn>)
+        return(<MDBBtn color="deep-orange"  onClick={this.handleDone} >Done</MDBBtn>)
     }
   }
 
@@ -84,18 +84,15 @@ export class Patient extends Component {
       </div>)
       else 
     return (
+      
       <MDBCol>
-        <MDBCard style={{ width: "22rem" }}>
-          <MDBCardImage
-            className="img-fluid"
-            src="https://cdn3.iconfinder.com/data/icons/point-of-interest-1/96/taxi-512.png"
-            waves
-          />
+         <br/>
+         <MDBCard style={{ width: "15rem", margin: '0 1rem ' }}>
+         <MDBCardImage className="img-fluid" src="https://cdn3.iconfinder.com/data/icons/point-of-interest-1/96/taxi-512.png" waves />
           <MDBCardBody>
-            <MDBCardTitle>Request from {` ${this.state.p.name}`}</MDBCardTitle>
+          <MDBCardTitle>Upcoming Request{` ${this.state.p.name}`} </MDBCardTitle>
             <MDBCardText>
               <ul>
-                <li> patientId:{this.state.req.patientId} </li>
                 <li> Pickup:{this.state.req.pickup} </li>
                 <li> drop off:{this.state.req.dropoff} </li>
                 <li> date:{this.state.req.data} </li>
@@ -112,6 +109,8 @@ export class Patient extends Component {
             
           </MDBCardBody>
         </MDBCard>
+        <br/>
+  
       </MDBCol>
     );
   }

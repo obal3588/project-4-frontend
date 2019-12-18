@@ -4,6 +4,9 @@ import DateTimePicker from 'react-datetime-picker';
 import { newRequest } from "../../auth/api";
 import { withRouter } from "react-router-dom";
 import { Route, Redirect } from "react-router-dom";
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
+// import './SignUp.scss';
+
 export class NewRequest extends Component {
   constructor() {
     super();
@@ -56,16 +59,22 @@ export class NewRequest extends Component {
     render() {
   
         return (
+          <MDBContainer id={'main'}>
+          <MDBRow>
+          <MDBCol md="6">
+            <MDBCard  className='card-image'>
+              <MDBCardBody>
+
             <Form onSubmit={this.newReq}>
             <Form.Row>
               <Form.Group as={Col} controlId="formGrid1">
                 <Form.Label>Pick up</Form.Label>
-                <Form.Control type="text" name="pickup" onChange={this.handleChange} />
+                <Form.Control type="text" name="pickup"  placeholder="from" onChange={this.handleChange} />
               </Form.Group>
             
               <Form.Group as={Col} controlId="formGridPassword">
                 <Form.Label>Drop off</Form.Label>
-                <Form.Control type="text" name="dropoff" placeholder="Password"   onChange={this.handleChange}/>
+                <Form.Control type="text" name="dropoff" placeholder="destination"   onChange={this.handleChange}/>
               </Form.Group>
 
 
@@ -74,16 +83,16 @@ export class NewRequest extends Component {
           
             <Form.Group controlId="formGridAddress1">
               <Form.Label>Health Conditions</Form.Label>
-              <Form.Control placeholder="update it later"  name ="healthConditions"onChange={this.handleChange}/>
+              <Form.Control placeholder="disabilities diseases"  name ="healthConditions"onChange={this.handleChange}/>
             </Form.Group>
           
             <Form.Group controlId="formGridAddress2">
-              <Form.Label> needs</Form.Label>
-              <Form.Control name="specialNeeds" placeholder="Apartment, studio, or floor"   onChange={this.handleChange}/>
+              <Form.Label> Special Needs</Form.Label>
+              <Form.Control name="specialNeeds" placeholder=" Strollers,Wheelchairs"   onChange={this.handleChange}/>
             </Form.Group>
             <Form.Group controlId="formGridAddress2">
-              <Form.Label> car type</Form.Label>
-              <Form.Control placeholder="Apartment, studio, or floor"  name="carDescription" onChange={this.handleChange} />
+              <Form.Label> Car Type</Form.Label>
+              <Form.Control placeholder="Wheelchair Van , handicapped van "  name="carDescription" onChange={this.handleChange} />
             </Form.Group>
           
 
@@ -94,10 +103,15 @@ export class NewRequest extends Component {
               </Form.Group>
 
 
-            <Button variant="primary" type="submit" >
+            <MDBBtn  color="deep-orange" type="submit" >
               Submit
-            </Button>
+            </MDBBtn>
           </Form>
+          </MDBCardBody>
+          </MDBCard>
+        </MDBCol>
+      </MDBRow>
+    </MDBContainer>
         )
     }
 }
