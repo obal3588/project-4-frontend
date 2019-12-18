@@ -19,10 +19,12 @@ used with Meddico Trip deployed server.
 - implement a chat bot
 - communication between users through application
 
+
 ## Links 
 Live deployment link: https://hamjahb.github.io/project-4-frontend/#/
 
 GitHub back end: https://github.com/hamjahb/project4
+
 Github React app:https://github.com/hamjahb/project-4-frontend
  
 
@@ -30,13 +32,16 @@ Github React app:https://github.com/hamjahb/project-4-frontend
 
 ### Hisham Aljahbli
 [linkedin](https://www.linkedin.com/in/haljahbli-softwareeng/).
+
 [github](https://github.com/hamjahb/).
 
 
 ### Obaid Alqahtani 
 [linkedin](https://www.linkedin.com/in/obaid-fpga/).
+
 [github](https://github.com/obal3588).
 
 ### Sarah Alghofaili
 [linkedin](https://www.linkedin.com/in/sarah-alghofaili-web-designer/).
+
 [github](https://github.com/saera1988).
