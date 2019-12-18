@@ -6,60 +6,46 @@ import{ Card ,Button,CardDeck,CardGroup}from 'react-bootstrap'
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact';
 
 export class Request extends Component {
+  constructor() {
+    super();
+    this.state = {
+      redirect: false
+    };
+  }
 
+  static contextType = ThemeContext;
+  setRedirect = event => {
+    event.preventDefault();
+    this.setState({
+      redirect: true
+    });
+  };
 
-    constructor(){
-        super();
-        this.state = {
-            redirect: false
-          };
+  renderRedirect = () => {
+    if (this.state.redirect) {
+      this.setState({
+        redirect: false
+      });
+
+      const { req } = this.context;
+      req(this.props.request);
+      return (
+        <Redirect
+          to={{
+            pathname: `/Patient/:${this.props.request.token}/myrequests/update/${this.props.request._id}`,
+            state: { id: this.props.request._id }
+          }}
+        />
+      );
     }
-    static contextType = ThemeContext;
-    setRedirect = event => {
-        event.preventDefault();
-        this.setState({
-          redirect: true
-        });
-      };
+  };
+  handlDelete = e => {
+    e.preventDefault();
 
-      renderRedirect = () => {
-        if (this.state.redirect) {
-          this.setState({
-            redirect: false
-          });
-        
-          const { req} = this.context;
-          req(this.props.request);
-          return (
-
-            <Redirect to={{
-                pathname: `/Patient/:${this.props.request.token}/myrequests/update/${this.props.request._id}`,
-                state: { id: this.props.request._id}
-            }}
-    />
-        
-          );
-        }
-      };
-    handlDelete=e=>{
-
-      e.preventDefault()
-        
-        deleteRequest(this.props.request)
-        this.props.apicall()
-
-        
-    }
-      handlDelete=e=>{
-
-      e.preventDefault()
-        
-        deleteRequest(this.props.request)
-        this.props.apicall()
-
-        
-    }
- 
+    deleteRequest(this.props.request);
+    this.props.apicall();
+  };
+  
     render() {
         console.log(this.context,"aaaa")
         return (
@@ -92,6 +78,7 @@ export class Request extends Component {
      
         )
     }
+
 }
 
-export default Request
+export default Request;

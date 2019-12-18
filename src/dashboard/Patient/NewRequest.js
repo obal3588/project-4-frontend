@@ -44,7 +44,7 @@ export class NewRequest extends Component {
     event.preventDefault();
     newRequest(this.state).then((res) => {
       
-      return self.props.history.goBack()
+      return self.props.history.push(`/Patient/${this.state.token}`)
 
     }
     

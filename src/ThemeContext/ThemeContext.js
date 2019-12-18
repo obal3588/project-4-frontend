@@ -7,6 +7,8 @@ class ThemeContextProvider extends Component {
         super();
         this.state = {
             reqid: "",
+            patientReqGlobule:[],
+
          
           }
     }
@@ -16,10 +18,16 @@ class ThemeContextProvider extends Component {
       
     this.setState({ reqid:e });
   }
+
+  patientReqSet= e=> {
+
+      
+    this.setState({ patientReqGlobule:e });
+  }
   render() { 
       console.log(this.state.reqid,"help")
     return (
-      <ThemeContext.Provider value={{...this.state, req: this.req}}>
+      <ThemeContext.Provider value={{...this.state, req: this.req , patientReqSet:this.patientReqSet}}>
         {this.props.children}
       </ThemeContext.Provider>
     );

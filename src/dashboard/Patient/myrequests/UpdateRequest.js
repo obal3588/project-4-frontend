@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { ThemeContext } from "../../../ThemeContext/ThemeContext";
-import{Form ,Col ,Button} from 'react-bootstrap';
-import DateTimePicker from 'react-datetime-picker';
+import { Form, Col, Button } from "react-bootstrap";
+import DateTimePicker from "react-datetime-picker";
+import { updateRequest } from "../../../auth/api";
+import { withRouter } from "react-router-dom";
 export class UpdateRequest extends Component {
   constructor() {
     super();
@@ -15,24 +17,25 @@ export class UpdateRequest extends Component {
       healthConditions: "",
       specialNeeds: "",
       package: Boolean,
-      token: ""
+      token: "",
+      redirect: false
     };
   }
 
   static contextType = ThemeContext;
   componentDidMount() {
-      const temp =this.context.reqid
-      console.log(this.context.reqid,"done")
+    const temp = this.context.reqid;
     this.setState({
-        assistantId: temp.assistantId,
-        date: temp.date,
-        pickup: temp.pickup,
-        dropoff: temp.dropoff,
-        carDescription:temp.carDescription,
-        healthConditions: temp.healthConditions,
-        specialNeeds: temp.specialNeeds,
-        package: temp.package,
-        token: temp.token
+      assistantId: temp.assistantId,
+      date: temp.date,
+      pickup: temp.pickup,
+      dropoff: temp.dropoff,
+      carDescription: temp.carDescription,
+      healthConditions: temp.healthConditions,
+      specialNeeds: temp.specialNeeds,
+      package: temp.package,
+      token: temp.token,
+      _id: temp._id
     });
   }
 
@@ -42,15 +45,17 @@ export class UpdateRequest extends Component {
     });
 
   onChange = date => this.setState({ date });
-  
-  newReq = event => {
 
+  updatereq = event => {
     event.preventDefault();
-  
+    const self = this
+    updateRequest(this.state)
+      .then(res => {return self.props.history.push(`/Patient/${this.state.token}`)})
+      .catch(e => console.log(e));
   };
   render() {
     return (
-      <Form onSubmit={this.newReq}>
+      <Form onSubmit={this.updatereq}>
         <Form.Row>
           <Form.Group as={Col} controlId="formGrid1">
             <Form.Label>Pick up</Form.Label>
@@ -68,7 +73,6 @@ export class UpdateRequest extends Component {
               type="text"
               name="dropoff"
               placeholder={this.state.dropoff}
-              
               onChange={this.handleChange}
             />
           </Form.Group>
@@ -77,7 +81,6 @@ export class UpdateRequest extends Component {
         <Form.Group controlId="formGridAddress1">
           <Form.Label>Health Conditions</Form.Label>
           <Form.Control
-            
             name="healthConditions"
             placeholder={this.state.healthConditions}
             onChange={this.handleChange}
@@ -95,7 +98,6 @@ export class UpdateRequest extends Component {
         <Form.Group controlId="formGridAddress2">
           <Form.Label> car type</Form.Label>
           <Form.Control
-            
             name="carDescription"
             placeholder={this.state.carDescription}
             onChange={this.handleChange}
@@ -114,4 +116,4 @@ export class UpdateRequest extends Component {
   }
 }
 
-export default UpdateRequest;
+export default withRouter(UpdateRequest);
