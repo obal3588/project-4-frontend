@@ -54,9 +54,33 @@ export const myrequests = req => {
   )
   }
 
+  export const myrequestsAssistants= req => {
+    console.log(req,"req")
+      return axios({
+        url: apiUrl + "/api/assistantrequests",
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${req.token}` // FOR EXPRESS
+          // 'Authorization': `Token ${user.token}` // FOR RAILS
+        },
+      }
+    )
+    }
 
 
-
+//get user info
+    export const user= req => {
+      console.log(req,"req")
+        return axios({
+          url: apiUrl +  `/api/user/${req.patientId}`,
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${req.token}` // FOR EXPRESS
+            // 'Authorization': `Token ${user.token}` // FOR RAILS
+          },
+        }
+      )
+      }
   export const deleteRequest  = req => {
     console.log(req,"hisham")
     return axios({
@@ -69,12 +93,53 @@ export const myrequests = req => {
     })
   }
 
+  
+  export const updateRequest = req => {
+      console.log(req)
+    return axios({
+      url: apiUrl +   `/api/requests/${req._id}`,
+      method: 'patch',
+      headers: {
+        'Authorization': `Bearer ${req.token}` // FOR EXPRESS
+        // 'Authorization': `Token ${user.token}` // FOR RAILS
+      },
+      data: {
+        request: {
+          assistantId: req.assistantId,
+          date:req.date,
+          carDescription:req.carDescription,
+          specialNeeds:req.specialNeeds,
+          package:req.package,
+          trip: {
+            start:req.pickup,
+            destination: req.dropoff
+          },
+       
+        }
+    }})
+  }
 
 
 
 
-
-
+  export const updateRequestProcess = req => {
+    console.log(req)
+  return axios({
+    url: apiUrl +   `/api/requests/${req._id}`,
+    method: 'patch',
+    headers: {
+      'Authorization': `Bearer ${req.token}` // FOR EXPRESS
+      // 'Authorization': `Token ${user.token}` // FOR RAILS
+    },
+    data: {
+      request: {
+        requestStatus: req.requestStatus,
+        completed:req.completed
+       
+     
+      }
+  }})
+}
 
 
 

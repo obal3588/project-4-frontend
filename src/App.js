@@ -14,6 +14,7 @@ import PatientDash from "./dashboard/Patient/PatientDash"
 import MyRequests from "./dashboard/Patient/myrequests/MyRequests"
 import NewRequest from "./dashboard/Patient/NewRequest"
 import AssistantDash from "./dashboard/Assistant/AssistantDash"
+import ReqHistory from "./dashboard/Assistant/ReqHistory"
 import Team from "./Home/Team"
 import UpdateRequest from "./dashboard/Patient/myrequests/UpdateRequest"
 
@@ -117,8 +118,13 @@ class App extends Component {
           />
           <AuthenticatedRoute
             user={user}
-            exact path="/assistant"
+            assistant          exact path="/assistant"
             render={() => <AssistantDash user={userObj} />}
+          />
+              <AuthenticatedRoute
+            user={user}
+            exact path="/assistant/history"
+            render={() => <ReqHistory user={userObj} />}
           />
            
         </main>
