@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {myrequests} from "../../../auth/api"
 import Request from "./Request"
+import { MDBCardGroup } from 'mdbreact';
 
 export class MyRequests extends Component {
 constructor(){
@@ -48,15 +49,14 @@ componentDidMount(){
 
         const myrequests= this.state.myrequests.map((val,key)=>{
             return (
-                
-        <Request request={val} apicall={this.apicall} /> )})
-     
+                <Request request={val} apicall={this.apicall} /> )}
+                )
+                return (
+                   
 
-        return (
-            <div>
-
+            <MDBCardGroup>                
                 {myrequests}
-            </div>
+            </MDBCardGroup>
         )
     }
 }

@@ -55,7 +55,7 @@ class App extends Component {
             message={alert.message}
           />
         ))}
-        <main className="container">
+        <main className="container push-footer">
        
           <Route
             path="/sign-up"
@@ -83,12 +83,12 @@ class App extends Component {
             render={() => <ChangePassword alert={this.alert} user={user} />}
           />
 
-          <AuthenticatedRoute
+          <Route
             user={user}
             exact path={`/Patient/:token`}
             render={() => <PatientDash user={userObj} setAssistantId={this.setAssistantId}/>}
           />
-           <AuthenticatedRoute
+           <Route
             user={user}
             exact path={`/Patient/:token/myrequests`}
             render={() => 
@@ -98,6 +98,8 @@ class App extends Component {
             }
           />
           <Route path="/team" component={Team} />
+          {/* <Route path="/SideNav" component={SideNav} /> */}
+          {/* <Route path="/NavbarPage" component={NavbarPage} /> */}
           <Route exact path="/" component={Home} />
          
      <AuthenticatedRoute
@@ -128,7 +130,7 @@ class App extends Component {
           />
            
         </main>
-        <Footer/>
+        <Footer />
       </React.Fragment>
    
     );
