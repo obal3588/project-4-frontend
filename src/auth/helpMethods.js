@@ -48,10 +48,6 @@ export const patient =function(user){
 
 export  const assistant =function(user){
 
-    if (user.data.user.role !="patient"){
-        console.log("it is not a patient");
-        return false
-    }
   const  obj={
         "name":user.data.user.name,
         "_id":user.data.user._id,
