@@ -84,9 +84,10 @@ export class Patient extends Component {
       </div>)
       else 
     return (
+      
       <MDBCol>
          <br/>
-         <MDBCard style={{ width: "12rem", margin: '0 1rem ' }}>
+         <MDBCard style={{ width: "15rem", margin: '0 1rem ' }}>
          <MDBCardImage className="img-fluid" src="https://cdn3.iconfinder.com/data/icons/point-of-interest-1/96/taxi-512.png" waves />
           <MDBCardBody>
           <MDBCardTitle>Upcoming Request{` ${this.state.p.name}`} </MDBCardTitle>

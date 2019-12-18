@@ -4,6 +4,9 @@ import { Form, Col, Button } from "react-bootstrap";
 import DateTimePicker from "react-datetime-picker";
 import { updateRequest } from "../../../auth/api";
 import { withRouter } from "react-router-dom";
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
+
+
 export class UpdateRequest extends Component {
   constructor() {
     super();
@@ -55,6 +58,12 @@ export class UpdateRequest extends Component {
   };
   render() {
     return (
+      <MDBContainer id={'main'}>
+      <MDBRow>
+      <MDBCol md="6">
+        <MDBCard  className='card-image'>
+          <MDBCardBody>
+
       <Form onSubmit={this.updatereq}>
         <Form.Row>
           <Form.Group as={Col} controlId="formGrid1">
@@ -108,10 +117,15 @@ export class UpdateRequest extends Component {
           <DateTimePicker onChange={this.onChange} value={this.state.date} />
         </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <MDBBtn  color="deep-orange" type="submit">
           Update
-        </Button>
-      </Form>
+          </MDBBtn>
+          </Form>
+          </MDBCardBody>
+          </MDBCard>
+        </MDBCol>
+      </MDBRow>
+    </MDBContainer>
     );
   }
 }
