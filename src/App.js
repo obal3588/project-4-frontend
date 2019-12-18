@@ -41,11 +41,12 @@ class App extends Component {
 
   render() {
     const { user, userObj } = this.state;
+    
 
     return (
     
       <React.Fragment>
-        <Header user={user} />
+        <Header user={user}  userRoll={userObj}/>
        
         <main className="container">
        
