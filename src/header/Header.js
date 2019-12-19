@@ -8,6 +8,7 @@ const assistant  = (
   <div>
     <Link className="nav-link d-inline" to="/assistant/history">History</Link>
     <Link className="nav-link d-inline" to="/assistant">My Requests </Link>
+    <Link className="nav-link d-inline" to="/assistant/prof">Profile </Link>
     </div>
 )
 
@@ -15,6 +16,7 @@ const patient   = (
   <div>
     <Link className="nav-link d-inline" to="/Patient/myrequests">History</Link>
     <Link className="nav-link d-inline" to="/Patient">My Requests </Link>
+    <Link className="nav-link d-inline" to="/Patient/prof">Profile </Link>
   </div>
 )
 

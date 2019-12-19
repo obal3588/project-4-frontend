@@ -17,6 +17,8 @@ import ReqHistory from "./dashboard/Assistant/ReqHistory";
 import Team from "./Home/Team";
 import UpdateRequest from "./dashboard/Patient/myrequests/UpdateRequest";
 import { ThemeContext } from "./ThemeContext/ThemeContext";
+import ProfP from "./dashboard/Patient/ProfP"
+import Prof from "./dashboard/Assistant/Prof"
 class App extends Component {
   constructor() {
     super();
@@ -48,7 +50,7 @@ class App extends Component {
       <React.Fragment>
         <Header user={user} userRoll={userObj} />
 
-        <main className="container">
+        <main className="push-footer">
           <Route
             path="/sign-up"
             render={() => <SignUp setUser={this.setUser} />}
@@ -104,6 +106,22 @@ class App extends Component {
             path={`/Patient/newrequest`}
             render={() => (
               <NewRequest user={userObj} assistantId={this.state.assistantId} />
+            )}
+          />
+             <AuthenticatedRoute
+            user={user}
+            exact
+            path={`/Patient/prof`}
+            render={() => (
+              <ProfP user={userObj}  />
+            )}
+          />
+                   <AuthenticatedRoute
+            user={user}
+            exact
+            path={`/assistant/prof`}
+            render={() => (
+              <Prof user={userObj}  />
             )}
           />
           <AuthenticatedRoute
