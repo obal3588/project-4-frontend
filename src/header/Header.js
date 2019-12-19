@@ -13,8 +13,8 @@ const assistant  = (
 
 const patient   = (
   <div>
-    <Link className="nav-link d-inline" to="/Patient/1/myrequests">History</Link>
-    <Link className="nav-link d-inline" to="/Patient/1/">My Requests </Link>
+    <Link className="nav-link d-inline" to="/Patient/myrequests">History</Link>
+    <Link className="nav-link d-inline" to="/Patient">My Requests </Link>
   </div>
 )
 
@@ -34,9 +34,9 @@ const unauthenticatedOptions = (
 )
 
 const alwaysOptions = (
-  <React.Fragment>
+<div>
     <Link  className="nav-link d-inline" to="/">Home</Link>
-  </React.Fragment>
+    </div>
 )
 
 const user = (e)=>{
@@ -65,7 +65,11 @@ const Header = ({ user,userRoll }) => (
     </Nav>
     
     <Nav>
-    <Nav.Link  ><Link className="nav-link d-inline" to="/team">Team</Link>  </Nav.Link>
+    <Nav.Link  >
+    <div>
+      <Link className="nav-link d-inline" to="/team">Team</Link> 
+      </div>
+       </Nav.Link>
       <a href="/">
       <img
         alt=""
